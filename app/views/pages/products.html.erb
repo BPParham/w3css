@@ -1,2 +1,32 @@
-<h1>Pages#products</h1>
-<p>Find me in app/views/pages/products.html.erb</p>
+<h2 class="w3-center">Products</h2>
+
+<div class="w3-content w3-display-container">
+  <%= image_tag("img_engine.jpg", :alt => "Engine", :style => "width: 100%;", :class => "mySlides") %>
+  <%= image_tag("img_headlights.jpg", :alt => "Headlights", :style => "width: 100%;", :class => "mySlides") %>
+  <%= image_tag("img_mirrors.jpg", :alt => "Mirrors", :style => "width: 100%;", :class => "mySlides") %>
+  <%= image_tag("img_taillights.jpg", :alt => "Taillights", :style => "width: 100%;", :class => "mySlides") %>
+  <%= image_tag("img_wheels.jpg", :alt => "Wheels", :style => "width: 100%;", :class => "mySlides") %>
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+</script>
